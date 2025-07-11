@@ -1,0 +1,79 @@
+/* static/style.css */
+:root {
+    --background-color: #101010;
+    --active-text-color: #f0f0f0;
+    --inactive-text-color: #404040;
+    --glow-color: rgba(240, 240, 240, 0.15);
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* KEY CHANGE: The slider is now an INVISIBLE MASK */
+.slider {
+    position: relative;
+    /* Removed background-color and box-shadow to make the container invisible */
+    background-color: transparent;
+    box-shadow: none;
+    /* Overflow hidden clips the numbers that slide out of the mask's view */
+    overflow: hidden; 
+    width: 90px;
+    /* Height is set by JavaScript to prevent empty space */
+    transition: height 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+}
+
+.digit-strip {
+    position: absolute;
+    transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.digit {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--inactive-text-color);
+    transition: color 0.7s, font-size 0.7s;
+    position: relative;
+    z-index: 2;
+}
+
+.digit.active {
+    color: var(--active-text-color);
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+/* The glowing circle effect */
+.digit.active::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background-color: var(--glow-color);
+    border-radius: 50%;
+    filter: blur(15px);
+    z-index: 1;
+}

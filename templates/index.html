@@ -1,0 +1,26 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="clock-container">
+        <!-- Each slider is now an invisible mask for the number strips -->
+        <div class="slider" id="h1-slider"><div class="digit-strip" id="h1"></div></div>
+        <div class="slider" id="h2-slider"><div class="digit-strip" id="h2"></div></div>
+        <div class="slider" id="m1-slider"><div class="digit-strip" id="m1"></div></div>
+        <div class="slider" id="m2-slider"><div class="digit-strip" id="m2"></div></div>
+        <div class="slider" id="s1-slider"><div class="digit-strip" id="s1"></div></div>
+        <div class="slider" id="s2-slider"><div class="digit-strip" id="s2"></div></div>
+        <div class="slider" id="ampm-slider"><div class="digit-strip" id="ampm"></div></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
