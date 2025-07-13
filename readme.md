@@ -15,3 +15,14 @@ pip install -r requirements.txt pyinstaller
 
 # Run your clock:
 .\dist\app.exe
+
+## Download & Run the Standalone Client
+
+You can now grab a single ZIP—no Python or source needed:
+
+1. Download the ZIP:  
+   [sliding-clock-client.zip](./release/sliding-clock-client.zip)
+
+2. Unzip it anywhere.
+
+3. Double-click **client.exe** to launch your fullscreen sliding clock
